@@ -1,13 +1,13 @@
-package com.example.springcloud;
+package com.example.eurekaclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringcloudApplication {
+public class EurekaClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudApplication.class, args);
+        SpringApplication.run(EurekaClientApplication.class, args);
     }
 
 }
