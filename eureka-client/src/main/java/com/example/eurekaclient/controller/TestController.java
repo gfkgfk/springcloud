@@ -19,7 +19,7 @@ public class TestController {
     @GetMapping("/info")
     public String info() {
         @SuppressWarnings("deprecation")
-        String info = "host：" + client.getHost() + "，service_id：" + client.getServiceId();
+        String info = "host：" + client.getHost() + "，service_id：" + client.getServiceId()+"  TestController------Kent";
         log.info(info);
         return info;
     }
