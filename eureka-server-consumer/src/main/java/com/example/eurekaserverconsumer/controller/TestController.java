@@ -14,4 +14,9 @@ public class TestController {
     public String getInfo() {
         return this.restTemplate.getForEntity("http://Server-Provider/info", String.class).getBody();
     }
+    @GetMapping("/getservertest")
+    public String getServerTest() { //接口放在eureka server上无法调用
+        return this.restTemplate.getForEntity("http://Eureka-Server/test", String.class).getBody();
+    }
+
 }
