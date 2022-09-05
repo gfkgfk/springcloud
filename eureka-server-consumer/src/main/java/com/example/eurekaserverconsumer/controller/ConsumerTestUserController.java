@@ -54,4 +54,13 @@ public class ConsumerTestUserController {
     public void deleteTestUser(@PathVariable Long id) {
         this.restTemplate.delete("http://Server-Provider/testuser/{1}", id);
     }
+
+
+    //服务提供端熔断降级请求接口
+    @GetMapping("TestUser/hystrix/{id:\\d+}")
+    public String hystrix(@PathVariable Long id){
+        Map<String, Object> params = new HashMap<>();
+        params.put("id", id);
+        return this.restTemplate.getForEntity("http://Server-Provider/hystrix/{id}", String.class, params).getBody();
+    }
 }
