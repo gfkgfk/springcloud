@@ -14,7 +14,7 @@ public class HystrixController {
     @GetMapping("/hystrix/{id:\\d+}")
     @HystrixCommand(fallbackMethod = "TimeOutErrorHandler", commandProperties = {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
-    }) //1.HystrixCommand要放再getmapping这个方法下，2TimeOutErrorHandler参数要一致
+    }) //1.HystrixCommand要放再getmapping这个方法下??(直接放timeOutError下没反应，没试过放到service中怎么样)，2TimeOutErrorHandler参数要一致
     public String getHystrix(@PathVariable Long id){
 
         return timeOutError(id);
